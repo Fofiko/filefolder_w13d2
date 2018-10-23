@@ -8,8 +8,11 @@ import com.codeclan.homework.fileFolder.repositories.FolderRepository;
 import com.codeclan.homework.fileFolder.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
+import org.springframework.boot.ApplicationRunner;
+import org.springframework.stereotype.Component;
 
-public class DataLoader {
+@Component
+public class DataLoader implements ApplicationRunner {
 
     @Autowired
     FileRepository fileRepository;
@@ -20,7 +23,7 @@ public class DataLoader {
     @Autowired
     UserRepository userRepository;
 
-
+    @Override
     public void run(ApplicationArguments args) {
         User user1 = new User("Joy");
         userRepository.save(user1);
