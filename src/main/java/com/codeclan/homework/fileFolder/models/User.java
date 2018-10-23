@@ -1,6 +1,10 @@
 package com.codeclan.homework.fileFolder.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -15,8 +19,14 @@ public class User {
     @Column(name = "name")
     private String name;
 
+    @JsonIgnore
+    @OneToMany(mappedBy="user")
+    private List<Folder> folders;;
+
     public User(String name) {
+
         this.name = name;
+        this.folders = new ArrayList<Folder>();
     }
 
     public User() {
@@ -36,5 +46,13 @@ public class User {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Folder> getFolders() {
+        return folders;
+    }
+
+    public void setFolders(List<Folder> folders) {
+        this.folders = folders;
     }
 }

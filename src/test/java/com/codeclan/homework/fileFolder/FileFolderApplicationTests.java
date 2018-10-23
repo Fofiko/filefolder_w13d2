@@ -31,12 +31,14 @@ public class FileFolderApplicationTests {
 
 	@Test
 	public void canAddAndSave(){
-		File file = new File("Rubyfile", "RB", 10);
+		User user1 = new User("Joy");
+		userRepository.save(user1);
+		Folder folder1 = new Folder("Rubyfolder", user1);
+		folderRepository.save(folder1);
+		File file = new File("Rubyfile", "RB", 10, folder1);
 		fileRepository.save(file);
-		Folder folder = new Folder("Rubyfolder");
-		folderRepository.save(folder);
-		User user = new User("Joy");
-		userRepository.save(user);
+
+
 
 	}
 
