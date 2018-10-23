@@ -16,30 +16,30 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class FileFolderApplicationTests {
 
-	@Autowired
-	FileRepository fileRepository;
-
-	@Autowired
-	FolderRepository folderRepository;
-
-	@Autowired
-	UserRepository userRepository;
+//	@Autowired
+//	FileRepository fileRepository;
+//
+//	@Autowired
+//	FolderRepository folderRepository;
+//
+//	@Autowired
+//	UserRepository userRepository;
 
 	@Test
 	public void contextLoads() {
 	}
 
-	@Test
-	public void canAddAndSave(){
-		User user1 = new User("Joy");
-		userRepository.save(user1);
-		Folder folder1 = new Folder("Rubyfolder", user1);
-		folderRepository.save(folder1);
-		File file = new File("Rubyfile", "RB", 10, folder1);
-		fileRepository.save(file);
-
-
-
-	}
+//	@Test
+//	public void canAddAndSave(){
+//		User user1 = new User("Joy");
+//		userRepository.save(user1);
+//		Folder folder1 = new Folder("Rubyfolder", user1);
+//		folderRepository.save(folder1);
+//		File file = new File("Rubyfile", "RB", 10, folder1);
+//		fileRepository.save(file);
+//
+//
+//
+//	}
 
 }
